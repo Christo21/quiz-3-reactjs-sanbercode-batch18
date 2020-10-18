@@ -1,0 +1,138 @@
+body {
+  background-image: url(./img/pattern.jpg);
+  font-family: 'Slabo 27px', serif;
+  margin: 0px;
+}
+
+header {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+nav li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: white;
+  position: relative;
+  top: 10px;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+h1{
+  text-align: center;
+}
+
+.itemHeader{
+  display: flex;
+}
+
+.itemHeader img{
+  width: 55%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 100% 0;
+  margin: 0 10px 20px 0;
+}
+
+form{
+  text-align: center;
+  margin: auto;
+}
+
+.formItem{
+  display: "block";
+}
+
+.formLabel{
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 20px 0;
+  width: 20%;
+}
+
+.formInput{
+  display: inline-block;
+}
+
+table{
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td{
+  border-bottom: 1px solid #ccc; 
+  padding: 10px;
+}
+
+.text{
+  display: block;
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 
+.formItem input{
+
+} */
+
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
