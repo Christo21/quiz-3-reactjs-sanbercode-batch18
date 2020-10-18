@@ -72,6 +72,10 @@ form{
   display: inline-block;
 }
 
+.formInput input{
+  width: 170px;
+}
+
 table{
   width: 80%;
   margin: auto;

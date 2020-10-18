@@ -1,16 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { Context } from "./context";
 import axios from "axios";
 
 const List = () => {
-    const [user, , film, setFilm, , , inputFilm, setInputFilm] = useContext(Context);
-
-    const redirect = () => {
-        if (!user.isLogin) {
-            return <Redirect to="/login" />;
-        }
-    }
+    const [, , film, setFilm, , , , setInputFilm, view,setView] = useContext(Context);
 
     const handleEdit = (event) => {
         event.preventDefault();
@@ -37,6 +31,7 @@ const List = () => {
                 console.log(res)
             })
 
+        setView({ ...film, lists: [...newFilm] })
         setFilm({ ...film, lists: [...newFilm] })
     }
 
@@ -58,7 +53,7 @@ const List = () => {
                 </thead>
                 <tbody>
                     {
-                        film.length !== 0 && film.lists.map((item, index) => {
+                        view.length !== 0 && view.lists.map((item, index) => {
                             return (
                                 <tr key={index}>
                                     <td>{index + 1}</td>
@@ -78,7 +73,6 @@ const List = () => {
                     }
                 </tbody>
             </table>
-            {/* {redirect()} */}
         </>
     )
 }

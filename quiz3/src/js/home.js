@@ -35,7 +35,7 @@ class Home extends React.Component {
     }
 
     render() {
-        const [, , film, , , , ,] = this.context
+        const [, , film, , , , , , ,] = this.context
         return (
             <>
                 <section >

@@ -3,7 +3,7 @@ import axios from "axios"
 import { Context } from "./context";
 
 const Form = () => {
-    const [user, , film, setFilm, , , inputFilm, setInputFilm] = useContext(Context);
+    const [user, , film, setFilm, , , inputFilm, setInputFilm, view, setView] = useContext(Context);
 
     const handleChange = (event) => {
         let typeOfInput = event.target.name
@@ -66,7 +66,21 @@ const Form = () => {
                 .then(res => {
                     setFilm(
                         {
-                            id: 0,
+                            lists: [
+                                ...film.lists,
+                                {
+                                    id: res.data.id,
+                                    title: inputFilm.title,
+                                    description: inputFilm.description,
+                                    year: inputFilm.year,
+                                    duration: inputFilm.duration,
+                                    genre: inputFilm.genre,
+                                    rating: inputFilm.rating,
+                                    image_url: inputFilm.image_url
+                                }]
+                        })
+                    setView(
+                        {
                             lists: [
                                 ...film.lists,
                                 {
@@ -102,6 +116,10 @@ const Form = () => {
                     setFilm({
                         lists: [...newfilm]
                     })
+
+                    setView({
+                        lists: [...newfilm]
+                    })
                 })
         }
 
@@ -109,19 +127,27 @@ const Form = () => {
             action: "create",
             title: "",
             description: "",
-            year: "",
-            duration: "",
+            year: "2020",
+            duration: "120",
             genre: "",
-            rating: "",
+            rating: "0",
             image_url: ""
         })
+
 
     }
 
     useEffect(() => {
+        console.log(inputFilm.length === 0)
         if (inputFilm.action === "editFilm") {
             let editFilm = film.lists.find(el => el.id === inputFilm.id)
             setInputFilm({ ...editFilm, action: "edit" });
+        } else if (inputFilm.length === 0) {
+            setInputFilm({
+                year: "2020",
+                duration: "120",
+                rating: "0"
+            })
         }
     }, [inputFilm, setInputFilm])
 
@@ -145,7 +171,7 @@ const Form = () => {
                 <div className="formItem">
                     <div className="formLabel"><label><b>Year: </b></label></div>
                     <div className="formInput">
-                        <input type="number" name="year" value={inputFilm.year} onChange={handleChange} />
+                        <input type="number" name="year" value={inputFilm.year} min="1980" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="formItem">
@@ -163,7 +189,7 @@ const Form = () => {
                 <div className="formItem">
                     <div className="formLabel"><label><b>Rating: </b></label></div>
                     <div className="formInput">
-                        <input type="number" name="rating" value={inputFilm.rating} onChange={handleChange} />
+                        <input type="number" name="rating" value={inputFilm.rating} min="0" max="10" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="formItem">

@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Context } from "./context";
 
 const Login = () => {
-    const [user, setUser, film, setFilm, inputUser, setInputUser, inputFilm, setInputFilm] = useContext(Context);
+    const [user, setUser, , , inputUser, setInputUser, , , ,] = useContext(Context);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,6 +18,8 @@ const Login = () => {
                 isLogin: true
             }
         )
+
+        localStorage.setItem("login", true)
     }
 
     const redirect = () => {

@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
 import { Context } from "./context";
+import axios from "axios";
 
 const Search = () => {
-    const [user, , film, setFilm, , , inputFilm, setInputFilm] = useContext(Context);
+    const [, , film, setFilm, , , inputFilm, setInputFilm, ,setView] = useContext(Context);
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         let title = inputFilm.search;
-        
         let newfilm = film.lists.filter(el => {
             return el.title.toString().toLowerCase().indexOf(title) !== -1
         })
 
-        setFilm({
+        setView({
             lists: [...newfilm]
         })
     }
