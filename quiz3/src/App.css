@@ -96,6 +96,19 @@ th, td{
   text-overflow: ellipsis;
 }
 
+footer {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: black;
+  color: white;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
 /* 
 .formItem input{
 

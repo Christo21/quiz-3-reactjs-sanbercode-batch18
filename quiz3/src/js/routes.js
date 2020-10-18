@@ -27,6 +27,9 @@ const Routes = () => {
                             <Login />
                         </Route>
                     </Switch>
+                    <footer>
+                        <h5>copyright &copy; 2020 by Sanbercode</h5>
+                    </footer>
                 </Provider>
             </Router>
         </>
