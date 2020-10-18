@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "./context";
-import axios from "axios";
 
 const Search = () => {
-    const [, , film, setFilm, , , inputFilm, setInputFilm, ,setView] = useContext(Context);
+    const [, , film, , , , inputFilm, setInputFilm, ,setView] = useContext(Context);
 
     const handleSubmit = (event) => {
         event.preventDefault();

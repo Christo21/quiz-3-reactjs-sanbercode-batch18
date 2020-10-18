@@ -5,7 +5,7 @@ import axios from "axios";
 import { Context } from "./context";
 
 const Nav = () => {
-    const [user, setUser, film, setFilm, , , , , view, setView] = useContext(Context);
+    const [, setUser, film, setFilm, , , , , view, setView] = useContext(Context);
 
     useEffect(() => {
         if (film.length === 0) {
@@ -30,7 +30,7 @@ const Nav = () => {
                     })
                 })
         }
-        if (view.length != film.length) {
+        if (view.length !== film.length) {
             axios.get(`http://backendexample.sanbercloud.com/api/movies`)
                 .then(res => {
                     setView({

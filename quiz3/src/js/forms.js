@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import axios from "axios"
 import { Context } from "./context";
 
 const Form = () => {
-    const [user, , film, setFilm, , , inputFilm, setInputFilm, view, setView] = useContext(Context);
+    const [, , film, setFilm, , , inputFilm, setInputFilm, , setView] = useContext(Context);
 
     const handleChange = (event) => {
         let typeOfInput = event.target.name

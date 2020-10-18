@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "./context";
 import Nav from './nav';

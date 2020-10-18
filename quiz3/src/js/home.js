@@ -1,7 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { Context } from "./context";
-import axios from "axios";
-import { render } from "@testing-library/react";
 
 class Item extends React.Component {
     render() {
